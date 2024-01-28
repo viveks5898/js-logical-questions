@@ -1,3 +1,5 @@
+Question: "Implement a Function to Check if a String is a Palindrome"
+
 const isPalindrome = (asd) => {
     let convertArray = asd.split("");
     let convertArrayReverse = asd.split("").reverse();
