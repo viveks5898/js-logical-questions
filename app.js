@@ -18,3 +18,4 @@ function formLargestNumber(arr) {
   // 4) join into one big string
   return strArr.join("");
 }
+console.log(formLargestNumber([3, 30, 34, 5, 9]));  // "9534330"
