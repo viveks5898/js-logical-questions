@@ -1,21 +1,18 @@
-function formLargestNumber(arr) {
-  // 1) build array of strings
-  const strArr = arr.map(String);
+ const sampleData = [3,4,5,[3,4],4,[4,3,[4,5,[4,4,4,]]],4,4]
 
-  // 2) custom sort:
-  strArr.sort((a, b) => {
-    // try placing a before b and b before a
-    const ab = a + b;
-    const ba = b + a;
-    if (ab > ba) return -1;  // a should come first
-    if (ab < ba) return  1;  // b should come first
-    return 0;                // they’re equal
-  });
+function flattenArray(array){
+   let result = []
+   array.forEach(element => {
+    if(Array.isArray(element)){
+       result.push(...flattenArray(element))
 
-  // 3) edge-case: all zeroes => “0” instead of “000…”
-  if (strArr[0] === "0") return "0";
+    }else{
+       result.push(element)
+    }
+    
+   });
 
-  // 4) join into one big string
-  return strArr.join("");
+   return result
 }
-console.log(formLargestNumber([3, 30, 34, 5, 9]));  // "9534330"
+
+console.log("res::", flattenArray(sampleData))
