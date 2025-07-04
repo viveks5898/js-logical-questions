@@ -1,16 +1,21 @@
 
 
-function doubleNUmber(arr){
+const arrOfElement = [2,35,5,2,5,6,7]
+
+ function fetchEvenNUm(arr){
 
     const n = arr.length;
-    let newArr = []
-    for(let i =0; i < n; i++){
-    const element = arr[i] * 2;
-    newArr.push(element)
+   let store = []
+    for(let i=0; i <n; i++){
+   if(arr[i] % 2 === 0){
+
+    store.push(arr[i])
+   }
 
     }
-    return newArr
 
-}
+    return store
 
-console.log("res", doubleNUmber([1,2,4,5,5]))
+ }
+
+ console.log("res:", fetchEvenNUm(arrOfElement))
