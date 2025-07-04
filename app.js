@@ -1,10 +1,20 @@
-function sumArray(arr) {
-    let sum = 0;
-    const n = arr.length;
-    for(let i= 0; i < n; i++ ){
-        sum += arr[i]
-    }
-return sum
-}
+// function findMax(arr) {
 
-console.log("res:", sumArray([3, 4, 5, 64, 32, 2]));
+//     let largestNUmber =  arr[0]
+// const n = arr.length;
+//  for(let i =1; i< n; i++){
+// if(largestNUmber < arr[i]){
+//     largestNUmber = arr[i]
+// }
+//  }
+
+//  return largestNUmber;
+// }
+
+
+function findMax(arr){
+    const element = Math.max(arr);
+    console.log("ele", element)
+
+}
+console.log("result",findMax([3, 8, 1, 12, 7]));
