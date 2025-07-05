@@ -1,4 +1,4 @@
-// Output: true
+containsValue// Output: true
  function containsValue (arr, num){
 const n = arr.length;
   for(let i =0; i < n; i++){
