@@ -1,15 +1,21 @@
 function findSecondLargest(arr) {
-  const n = arr.length;
-  let firstLarge = arr[0];
-  let secondLarge = 0;
-  for(let i =1 ; i < n; i++){
+  if (arr.length < 2) {
+    return null; // or throw error
+  }
 
-    if(arr[i] > firstLarge && secondLarge < firstLarge){
-      secondLarge = firstLarge;
-      firstLarge = arr[i]
+  let firstLargest = -Infinity;
+  let secondLargest = -Infinity;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > firstLargest) {
+      secondLargest = firstLargest;
+      firstLargest = arr[i];
+    } else if (arr[i] > secondLargest && arr[i] !== firstLargest) {
+      secondLargest = arr[i];
     }
   }
-  return secondLarge
+
+  return secondLargest === -Infinity ? null : secondLargest;
 }
 
-console.log(findSecondLargest([3, 5, 1, 7, 9, 2]));
+console.log(findSecondLargest([3, 5, 1, 7, 9, 2])); // 7
