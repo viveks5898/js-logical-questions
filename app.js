@@ -1,16 +1,13 @@
-function sumNestedArray(arr) {
-  let sum = 0;
-  const n = arr.length;
-  for (let i = 0; i < n; i++) {
-    if (Array.isArray(arr[i])) {
-      const ele = sumNestedArray(arr[i]);
-      sum += ele;
-    } else {
-      sum += arr[i];
-    }
-  }
-
-  return sum;
+function isPalindrome(str) {
+  let newStr = str.toLowerCase().replace(/\s+/g, "");
+  let reverseString = newStr.split("").reverse().join("");
+  return (newStr === reverseString);
 }
+console.log('res 1::', isPalindrome("Race car")); // true
+console.log('res 2::', isPalindrome("A man a plan a canal Panama")); // true
+console.log('res 3::', isPalindrome("No lemon no melon")); // true
+console.log('res 4::', isPalindrome("Was it a car or a cat I saw")); // true
 
-console.log("res::", sumNestedArray([1, [2, [3, 4], 5], 6]));
+console.log('res 5::', isPalindrome("Hello")); // false
+console.log('res 6::', isPalindrome("JavaScript")); // false
+console.log('res 7::', isPalindrome("Not a palindrome")); // false
