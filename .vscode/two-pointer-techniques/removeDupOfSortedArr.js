@@ -1,5 +1,3 @@
-Input:  [0, 1, 0, 3, 12]
-Output: [1, 3, 12, 0, 0]
 function removeDupOfSortedArr(arr){
  let i = 0;
  let j =  i + 1;
@@ -14,5 +12,3 @@ function removeDupOfSortedArr(arr){
 
  return arr
 }
-
-console.log("res", removeDupOfSortedArr([1,1,2]))
