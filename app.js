@@ -1,21 +1,24 @@
-Input: [0, 1, 0, 3, 12];
-Output: [1, 3, 12, 0, 0];
+Input: "A man, a plan, a canal: Panama";
+Output: true;
+Explanation: "amanaplanacanalpanama";
+Input: "race a car";
+Output: false;
+Explanation: "raceacar";
 
-function removeAllZerosEnd(input) {
-  let firstIndex = 0;
-
-  for (let i = 0; i < input.length; i++) {
-    if (input[i] !== 0) {
-      input[firstIndex] = input[i];
-      firstIndex++;
+function isPalindrome(string) {
+  let newString = string.replace(/[^a-zA-Z]/g, "").toLowerCase().trim();
+  let left = 0;
+  let right = newString.length - 1;
+  while (right > left) {
+    if (newString[left] !== newString[right]) {
+      return false;
     }
+    left++;
+    right--;
   }
-
-  for (let i = firstIndex; i < input.length; i++) {
-    input[i] = 0;
-  }
-
-  return input;
+  return true;
 }
 
-console.log("res", removeAllZerosEnd([0, 1, 0, 3, 12]));
+console.log("res", isPalindrome("A man, a plan, a canal: Panama"));
+console.log("res", isPalindrome("race a car"));
+
