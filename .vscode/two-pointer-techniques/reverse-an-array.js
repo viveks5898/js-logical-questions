@@ -16,4 +16,4 @@ function reverseAnArray(arr) {
 
   return arr;
 }
-console.log("res:", reverseAnArray([1, 2, 3, 4, 5]));
+console.log("res:", reverseAnArray([1, 2, 3, 4, 5,6]));

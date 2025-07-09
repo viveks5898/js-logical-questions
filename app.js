@@ -1,19 +1,22 @@
-Input: [1, 2, 3, 4, 5];
-Output: [5, 4, 3, 2, 1];
+Input: (arr = [1, 2, 3, 4, 6]), (target = 6);
+Output: true;
+Explanation: "2 + 4 = 6";
 
-function reverseAnArray(arr) {
+function sumOfArrayTarget(arr, target) {
   let left = 0;
   let right = arr.length - 1;
+
   while (right > left) {
-    const temp = arr[left];
-
-    arr[left] = arr[right];
-    arr[right] = temp;
-
+    const sum = arr[left] + arr[right] ;
+    if (sum== target) {
+      return true;
+    }else if(sum < target ){
     left++;
+
+    }else{
     right--;
   }
-
-  return arr;
 }
-console.log("res:", reverseAnArray([1, 2, 3, 4, 5]));
+  return false;
+}
+console.log("res", sumOfArrayTarget([1, 2, 3, 4, 6], 4));
